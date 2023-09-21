@@ -11,7 +11,7 @@ X, y = make_classification(n_samples=100, n_features=2, n_redundant=0, n_repeate
 y[y == 0] = -1  # La nostra implementació esta pensada per tenir les classes 1 i -1.
 
 
-perceptron = Perceptron()
+perceptron = Perceptron(n_iter=150)
 perceptron.fit(X, y)  # Ajusta els pesos
 y_prediction = perceptron.predict(X)  # Prediu
 

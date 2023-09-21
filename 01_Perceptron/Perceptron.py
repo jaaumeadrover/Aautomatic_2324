@@ -52,6 +52,7 @@ class Perceptron:
                 update=self.eta*(y_row-y_hat)
                 update_vector=update*item_row
                 self.w_[1:]+=update_vector
+                self.w_[0]+=update
 
 
     def predict(self, X):
@@ -62,4 +63,4 @@ class Perceptron:
         """
         # TODO: Put your code
         pred=np.dot(X,self.w_[1:])+self.w_[0]
-        return np.where(pred>= 1,1,-1)
+        return np.where(pred>= 0.0,1,-1)
