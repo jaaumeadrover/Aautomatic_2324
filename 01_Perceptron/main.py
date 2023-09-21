@@ -15,7 +15,14 @@ perceptron = Perceptron()
 perceptron.fit(X, y)  # Ajusta els pesos
 y_prediction = perceptron.predict(X)  # Prediu
 
+
+print(perceptron.w_)
+a=perceptron.w_[0]
+n=perceptron.w_[1]
+x=np.linspace(-2,4,10)
+y=a*x+n
 #  Resultats
 plt.figure(1)
+plt.plot(x,y)
 plt.scatter(X[:, 0], X[:, 1], c=y_prediction)  # Mostram el conjunt de mostres el color indica la classe
 plt.show()
