@@ -46,6 +46,12 @@ class Adaline:
 
         for _ in range(self.n_iter):
             # TODO: PUT YOUR CODE HERE
+            x_mod = np.hstack([np.ones((X.shape[0], 1)), X])
+            sub = (y-(np.dot(x_mod,np.transpose(self.w_))))
+            update = self.eta * (np.dot(sub,x_mod))
+            self.w_ += update
+            error = 0.5 * np.sum((y-sub)**2)
+            self.cost_.append(error)
 
     def net_output(self, X):
         """Calculate net output"""

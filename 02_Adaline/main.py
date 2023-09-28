@@ -17,7 +17,7 @@ X_std = np.copy(X)
 X_std[:, 0] = (X[:, 0] - X[:, 0].mean()) / X[:, 0].std()
 X_std[:, 1] = (X[:, 1] - X[:, 1].mean()) / X[:, 1].std()
 
-perceptron = Adaline(eta=0.0005, n_iter=40)
+perceptron = Adaline(eta=0.0005, n_iter=75)
 perceptron.fit(X_std, y)
 
 y_prediction = perceptron.predict(X)
